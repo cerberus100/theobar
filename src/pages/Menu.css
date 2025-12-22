@@ -1,0 +1,75 @@
+.menu-hero {
+  height: 40vh;
+  min-height: 400px;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('/assets/cocktail.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-section {
+    margin-bottom: 4rem;
+}
+
+.menu-category-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.menu-category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: rgba(212, 175, 55, 0.3);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.menu-item {
+    margin-bottom: 1.5rem;
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.menu-price {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+}
+
+.menu-item-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+.menu-note {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-top: 4rem;
+    font-style: italic;
+}

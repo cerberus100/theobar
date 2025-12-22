@@ -1,0 +1,406 @@
+/* ========================================
+   THE O BAR - STRICT REFERENCE CLONE
+   Obsidian black, Champagne gold, Pixel match
+======================================== */
+
+/* GLOBAL RESET FOR THIS PAGE */
+.hero-strict,
+.section-experience-strict,
+.section-split-strict {
+    color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* Hero Section - Strict Reversion / Vivid Polish */
+.hero-strict {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    /* Vivid: Increased saturation and brightness to bring back the wood/bottle tones */
+    /* Subtle sepia/contrast adjustment for "richness" */
+    background-color: #050505;
+}
+
+.hero-strict::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    /* Vivid: 85% saturation for life, 0.8 brightness for visibility */
+    filter: saturate(0.85) brightness(0.8) contrast(1.1);
+    z-index: 0;
+}
+
+.hero-overlay-strict {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Vivid Overlay: Obsidian to Amber to Obsidian */
+    /* Center is 40% opacity warm brown to reveal the bar */
+    /* Edges are 80-90% black for text readability */
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.6) 20%,
+            rgba(20, 10, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.6) 80%,
+            rgba(0, 0, 0, 0.9) 100%);
+    z-index: 1;
+    /* Subtle warm glow to kill the blue */
+    box-shadow: inset 0 0 150px rgba(212, 175, 55, 0.05);
+}
+
+.hero-content-strict {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 40px;
+    /* More breathing room */
+    margin-top: -40px;
+}
+
+.hero-strict h1 {
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    /* Slightly larger max */
+    color: #fff;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.08em;
+    /* Increased spacing */
+    line-height: 1.1;
+    text-transform: uppercase;
+    /* Dominant */
+    /* Pixel-Perfect Optical Alignment - Center "O" over bottle */
+    transform: translateX(14px);
+}
+
+@media (max-width: 1023px) {
+    .hero-strict h1 {
+        transform: translateX(10px);
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-strict h1 {
+        transform: translateX(6px);
+    }
+}
+
+.hero-subtitle-strict {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.75);
+    /* Reduced opacity */
+    margin-bottom: 4rem;
+    /* More breathing room */
+    letter-spacing: 0.05em;
+    font-weight: 300;
+}
+
+/* BUTTONS - Refined Outline Style */
+.hero-buttons-strict {
+    display: flex;
+    gap: 2rem;
+    /* Increased gap */
+    justify-content: center;
+}
+
+.btn-outline-strict {
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    /* Shorter, wider */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Subtle border */
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    /* Smaller text */
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    /* Tracking */
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.btn-outline-strict:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+    color: #fff;
+}
+
+/* Primary CTA (Get Directions) - Kept White/Clean */
+.hero-buttons-strict .btn-outline-strict:first-child:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+/* Secondary CTA (View Hours) - Gold Accent */
+.hero-buttons-strict .btn-outline-strict:last-child {
+    border-color: rgba(212, 175, 55, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-buttons-strict .btn-outline-strict:last-child:hover {
+    border-color: #D4AF37;
+    color: #D4AF37;
+    background: rgba(212, 175, 55, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+}
+
+/* INFO STRIP - Strict */
+.info-strip-strict {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: transparent;
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    /* Increased gap */
+}
+
+.info-item-strict {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(255, 255, 255, 0.6);
+    /* Quieter */
+    font-size: 0.85rem;
+    /* Smaller */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.strip-divider {
+    color: rgba(255, 255, 255, 0.1);
+    /* Barely visible */
+    font-weight: 300;
+}
+
+/* SIGNATURE EXPERIENCE */
+.section-experience-strict {
+    background: #050505;
+    padding: 10rem 5%;
+    /* Increased spacing +25% */
+    text-align: center;
+}
+
+.section-experience-strict h2 {
+    font-size: 2.2rem;
+    /* Slightly smaller */
+    color: #e6e6e6;
+    margin-bottom: 6rem;
+    /* Huge breathing room */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.experience-grid-strict {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    /* More space between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-card-strict {
+    background: transparent;
+    border: none;
+    /* Removed border for cleanliness */
+    padding-bottom: 0;
+}
+
+.card-img-strict {
+    height: 300px;
+    /* Taller, more elegant */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2.5rem;
+    filter: brightness(0.7) grayscale(0.2);
+    /* Darker, calmer */
+    transition: filter 0.5s ease;
+}
+
+.experience-card-strict:hover .card-img-strict {
+    filter: brightness(0.8) grayscale(0);
+}
+
+.experience-card-strict h3 {
+    font-size: 1.25rem;
+    color: #d4af37;
+    margin: 0 0 1rem;
+    letter-spacing: 0.05em;
+    font-family: 'Playfair Display', serif;
+}
+
+.experience-card-strict p {
+    color: rgba(255, 255, 255, 0.5);
+    /* Quieter */
+    font-size: 0.9rem;
+    line-height: 1.8;
+    /* Comfortable reading */
+    padding: 0;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* SPLIT SECTION (HOURS / FAQ) */
+.section-split-strict {
+    background: #050505;
+    padding: 8rem 5% 10rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    /* Subtle */
+}
+
+.container-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.split-col h3 {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.split-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    /* Smaller divider */
+    height: 1px;
+    background: #d4af37;
+    opacity: 0.5;
+}
+
+/* HOURS */
+.hours-row-strict {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    /* Gold tint, very subtle */
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+.hours-row-strict span:last-child {
+    color: #fff;
+    /* Times highlighted */
+}
+
+/* FAQ */
+.faq-item-strict {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    cursor: pointer;
+}
+
+.faq-q-strict {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    transition: color 0.3s ease;
+}
+
+.faq-item-strict:hover .faq-q-strict {
+    color: #d4af37;
+}
+
+.faq-toggle-strict {
+    color: #d4af37;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.faq-a-strict {
+    padding-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container-split {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+
+    .experience-grid-strict {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-strict h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-buttons-strict {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .btn-outline-strict {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-strip-strict {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .strip-divider {
+        display: none;
+    }
+}
