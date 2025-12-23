@@ -40,7 +40,7 @@ const Navbar = () => {
                         <Link to="/menu" className={location.pathname === '/menu' ? 'active' : ''} onClick={closeMenu}>Menu</Link>
                         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
                     </div>
-                    <a href="/contact#map" className="nav-cta-strict" onClick={closeMenu}>Get Directions</a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=141+N+Carrollton+Ave,+New+Orleans,+LA+70119" target="_blank" rel="noopener noreferrer" className="nav-cta-strict" onClick={closeMenu}>Get Directions</a>
                 </div>
             </div>
         </nav>

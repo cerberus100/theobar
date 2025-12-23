@@ -50,7 +50,7 @@ const Home = () => {
                     <p className="hero-subtitle-strict">A cocktail bar on North Carrollton. Open 5 PM nightly.</p>
 
                     <div className="hero-buttons-strict">
-                        <a href="/contact#map" className="btn-outline-strict">Get Directions</a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=141+N+Carrollton+Ave,+New+Orleans,+LA+70119" target="_blank" rel="noopener noreferrer" className="btn-outline-strict">Get Directions</a>
                         <a href="#hours" className="btn-outline-strict">View Hours</a>
                     </div>
                 </div>

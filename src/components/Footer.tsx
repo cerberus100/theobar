@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -14,7 +13,7 @@ const Footer = () => {
                         New Orleans, LA 70119
                     </p>
                     <div className="footer-links">
-                        <Link to="/contact">Get Directions</Link>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=141+N+Carrollton+Ave,+New+Orleans,+LA+70119" target="_blank" rel="noopener noreferrer">Get Directions</a>
                     </div>
                 </div>
 
