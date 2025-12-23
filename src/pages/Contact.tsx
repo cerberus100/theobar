@@ -166,7 +166,7 @@ const Contact = () => {
                     </div>
 
                     {/* Visit Us Section */}
-                    <div className="grid-2-col-wide" style={{ marginTop: '4rem' }}>
+                    <div id="map" className="grid-2-col-wide" style={{ marginTop: '4rem', scrollMarginTop: '100px' }}>
                         <div style={{ alignSelf: 'center' }}>
                             <h2 className="mb-manual">Visit Us</h2>
 

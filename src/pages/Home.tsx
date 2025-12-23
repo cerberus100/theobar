@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import './Home.css';
@@ -51,7 +50,7 @@ const Home = () => {
                     <p className="hero-subtitle-strict">A cocktail bar on North Carrollton. Open 5 PM nightly.</p>
 
                     <div className="hero-buttons-strict">
-                        <Link to="/contact" className="btn-outline-strict">Get Directions</Link>
+                        <a href="/contact#map" className="btn-outline-strict">Get Directions</a>
                         <a href="#hours" className="btn-outline-strict">View Hours</a>
                     </div>
                 </div>

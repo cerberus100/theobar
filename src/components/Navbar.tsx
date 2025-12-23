@@ -40,7 +40,7 @@ const Navbar = () => {
                         <Link to="/menu" className={location.pathname === '/menu' ? 'active' : ''} onClick={closeMenu}>Menu</Link>
                         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
                     </div>
-                    <Link to="/contact" className="nav-cta-strict" onClick={closeMenu}>Get Directions</Link>
+                    <a href="/contact#map" className="nav-cta-strict" onClick={closeMenu}>Get Directions</a>
                 </div>
             </div>
         </nav>
