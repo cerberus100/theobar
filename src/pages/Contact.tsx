@@ -166,7 +166,7 @@ const Contact = () => {
                     </div>
 
                     {/* Visit Us Section */}
-                    <div id="map" className="grid-2-col-wide" style={{ marginTop: '4rem', scrollMarginTop: '100px' }}>
+                    <div className="grid-2-col-wide" style={{ marginTop: '4rem' }}>
                         <div style={{ alignSelf: 'center' }}>
                             <h2 className="mb-manual">Visit Us</h2>
 
@@ -189,7 +189,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="map-container">
+                        <div id="map" className="map-container" style={{ scrollMarginTop: '100px' }}>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.634739564614!2d-90.09986322359487!3d29.97548762018269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8620a5c1c0c0c0c1%3A0x1234567890abcdef!2s141%20N%20Carrollton%20Ave%2C%20New%20Orleans%2C%20LA%2070119!5e0!3m2!1sen!2sus!4v1703060000000!5m2!1sen!2sus"
                                 width="100%"

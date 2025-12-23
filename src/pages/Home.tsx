@@ -63,17 +63,17 @@ const Home = () => {
                 <h2>Signature Experience</h2>
                 <div className="experience-grid-strict">
                     <div className="experience-card-strict">
-                        <div className="card-img-strict" style={{ backgroundImage: "url('/assets/cocktail.png')" }}></div>
+                        <div className="card-img-strict" style={{ backgroundImage: "url('/assets/cocktail.webp')" }}></div>
                         <h3>Cocktails</h3>
                         <p>Craft Cocktails and<br />Classic Pours</p>
                     </div>
                     <div className="experience-card-strict">
-                        <div className="card-img-strict" style={{ backgroundImage: "url('/assets/champagne.png')" }}></div>
+                        <div className="card-img-strict" style={{ backgroundImage: "url('/assets/champagne.webp')" }}></div>
                         <h3>Champagne</h3>
                         <p>A short list.<br />Good bottles, opened late.</p>
                     </div>
                     <div className="experience-card-strict">
-                        <div className="card-img-strict" style={{ backgroundImage: "url('/assets/music.png')" }}></div>
+                        <div className="card-img-strict" style={{ backgroundImage: "url('/assets/music.webp')" }}></div>
                         <h3>Curated Music</h3>
                         <p>Hip-Hop, R&B, and House.</p>
                     </div>
