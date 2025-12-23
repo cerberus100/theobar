@@ -240,9 +240,14 @@ h3 {
 
 .card-img-strict {
     height: 300px;
-    /* Taller, more elegant */
+    width: 100%;
+    /* Ensure full width */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    /* Prevent repeat */
+    background-color: #050505;
+    /* Match section bg to hide gaps */
     margin-bottom: 2.5rem;
     filter: brightness(0.7) grayscale(0.2);
     /* Darker, calmer */
