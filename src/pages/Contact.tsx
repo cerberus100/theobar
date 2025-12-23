@@ -176,13 +176,6 @@ const Contact = () => {
                                     141 N Carrollton Ave<br />
                                     New Orleans, LA 70119
                                 </p>
-
-                                <h3 className="mb-manual">Hours</h3>
-                                <ul className="hours-list-page" style={{ color: '#ccc', marginBottom: '2rem' }}>
-                                    <li>Mon–Thu: 5 PM – 12 AM</li>
-                                    <li>Fri–Sat: 5 PM – 2 AM</li>
-                                    <li>Sun: 5 PM – 12 AM</li>
-                                </ul>
                             </div>
 
                             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
