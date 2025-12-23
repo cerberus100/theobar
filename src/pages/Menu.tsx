@@ -186,40 +186,46 @@ const Menu = () => {
                     {/* Wines */}
                     <div className="menu-section">
                         <h2 className="menu-category-title">Wines</h2>
-                        <div className="menu-grid">
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                            gap: '4rem',
+                            maxWidth: '900px',
+                            margin: '0 auto'
+                        }}>
                             <div>
                                 <h4 style={{ color: 'var(--color-accent)', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>Cabernet</h4>
-                                <div className="menu-item-header"><span>Prati by Louis Martin</span> <span className="menu-price">13/46</span></div>
-                                <div className="menu-item-header"><span>Justin</span> <span className="menu-price">17/60</span></div>
+                                <div className="menu-item-header"><span>Prati by Louis Martin</span> <span className="menu-price">$13/46</span></div>
+                                <div className="menu-item-header"><span>Justin</span> <span className="menu-price">$17/60</span></div>
 
                                 <h4 style={{ color: 'var(--color-accent)', marginBottom: '1rem', marginTop: '1.5rem', fontFamily: 'var(--font-heading)' }}>Pinot Noir</h4>
-                                <div className="menu-item-header"><span>Meomi</span> <span className="menu-price">12/42</span></div>
-                                <div className="menu-item-header"><span>J Vineyards</span> <span className="menu-price">15/52</span></div>
+                                <div className="menu-item-header"><span>Meomi</span> <span className="menu-price">$12/42</span></div>
+                                <div className="menu-item-header"><span>J Vineyards</span> <span className="menu-price">$15/52</span></div>
 
                                 <h4 style={{ color: 'var(--color-accent)', marginBottom: '1rem', marginTop: '1.5rem', fontFamily: 'var(--font-heading)' }}>Chardonnay</h4>
-                                <div className="menu-item-header"><span>J Vineyards</span> <span className="menu-price">16/56</span></div>
-                                <div className="menu-item-header"><span>Favorite Neighbor</span> <span className="menu-price">17/60</span></div>
+                                <div className="menu-item-header"><span>J Vineyards</span> <span className="menu-price">$16/56</span></div>
+                                <div className="menu-item-header"><span>Favorite Neighbor</span> <span className="menu-price">$17/60</span></div>
 
                                 <h4 style={{ color: 'var(--color-accent)', marginBottom: '1rem', marginTop: '1.5rem', fontFamily: 'var(--font-heading)' }}>Red Blends</h4>
-                                <div className="menu-item-header"><span>Cht St Michelle Indian Wells</span> <span className="menu-price">13/46</span></div>
-                                <div className="menu-item-header"><span>Antinori Villa Rosso</span> <span className="menu-price">13/46</span></div>
+                                <div className="menu-item-header"><span>Cht St Michelle Indian Wells</span> <span className="menu-price">$13/46</span></div>
+                                <div className="menu-item-header"><span>Antinori Villa Rosso</span> <span className="menu-price">$13/46</span></div>
                             </div>
                             <div>
                                 <h4 style={{ color: 'var(--color-accent)', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>Pinot Grigio</h4>
-                                <div className="menu-item-header"><span>Ruffino Aqua di Venus</span> <span className="menu-price">12/46</span></div>
-                                <div className="menu-item-header"><span>Girlan</span> <span className="menu-price">15/53</span></div>
+                                <div className="menu-item-header"><span>Ruffino Aqua di Venus</span> <span className="menu-price">$12/46</span></div>
+                                <div className="menu-item-header"><span>Girlan</span> <span className="menu-price">$15/53</span></div>
 
                                 <h4 style={{ color: 'var(--color-accent)', marginBottom: '1rem', marginTop: '1.5rem', fontFamily: 'var(--font-heading)' }}>Sauvignon Blanc</h4>
-                                <div className="menu-item-header"><span>Whitehaven</span> <span className="menu-price">13/46</span></div>
-                                <div className="menu-item-header"><span>Sancerre</span> <span className="menu-price">90</span></div>
+                                <div className="menu-item-header"><span>Whitehaven</span> <span className="menu-price">$13/46</span></div>
+                                <div className="menu-item-header"><span>Sancerre</span> <span className="menu-price">$90</span></div>
 
                                 <h4 style={{ color: 'var(--color-accent)', marginBottom: '1rem', marginTop: '1.5rem', fontFamily: 'var(--font-heading)' }}>Sparkling</h4>
-                                <div className="menu-item-header"><span>LaMarca Prosecco</span> <span className="menu-price">12/42</span></div>
-                                <div className="menu-item-header"><span>LaMarca Prosecco Rose</span> <span className="menu-price">12/42</span></div>
-                                <div className="menu-item-header"><span>Chandon Brut</span> <span className="menu-price">12/42</span></div>
+                                <div className="menu-item-header"><span>LaMarca Prosecco</span> <span className="menu-price">$12/42</span></div>
+                                <div className="menu-item-header"><span>LaMarca Prosecco Rose</span> <span className="menu-price">$12/42</span></div>
+                                <div className="menu-item-header"><span>Chandon Brut</span> <span className="menu-price">$12/42</span></div>
 
                                 <h4 style={{ color: 'var(--color-accent)', marginBottom: '1rem', marginTop: '1.5rem', fontFamily: 'var(--font-heading)' }}>Rose</h4>
-                                <div className="menu-item-header"><span>Hampton Water</span> <span className="menu-price">13/46</span></div>
+                                <div className="menu-item-header"><span>Hampton Water</span> <span className="menu-price">$13/46</span></div>
                             </div>
                         </div>
                     </div>
