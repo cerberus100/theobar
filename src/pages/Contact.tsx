@@ -30,11 +30,11 @@ const Contact = () => {
                 setStatus('success');
                 setFormData({ name: '', email: '', phone: '', message: '' });
             } else {
-                console.error(data.message);
+                console.error('Server Error:', data.message, data.error);
                 setStatus('error');
             }
         } catch (error) {
-            console.error(error);
+            console.error('Network/Client Error:', error);
             setStatus('error');
         }
     };
