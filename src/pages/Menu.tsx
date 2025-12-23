@@ -230,7 +230,7 @@ const Menu = () => {
                         </div>
                     </div>
 
-                    <p className="menu-note">To avoid raising prices, a 4% Non-Cash Adjustment will be added to credit/debit card payments to cover processing fees. This DOES NOT apply to cash payments.</p>
+
 
                 </div>
             </div>
