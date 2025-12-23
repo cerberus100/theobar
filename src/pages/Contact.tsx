@@ -11,16 +11,32 @@ const Contact = () => {
         message: ''
     });
 
-    const handleSubmit = (e: FormEvent) => {
+    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+        setStatus('sending');
 
-        // Create mailto link with pre-filled data
-        const subject = encodeURIComponent(`Inquiry from ${formData.name}`);
-        const body = encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\n\nMessage:\n${formData.message}`
-        );
+        try {
+            const res = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
 
-        window.location.href = `mailto:admin@o-nola.com?subject=${subject}&body=${body}`;
+            const data = await res.json();
+
+            if (res.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+            } else {
+                console.error(data.message);
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus('error');
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,126 +59,162 @@ const Contact = () => {
 
                     {/* Contact Form */}
                     <div style={{ maxWidth: '600px', margin: '0 auto 4rem' }}>
-                        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                            <div>
-                                <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-accent)', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
-                                    NAME *
-                                </label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
+                        {status === 'success' ? (
+                            <div style={{
+                                textAlign: 'center',
+                                padding: '2rem',
+                                border: '1px solid var(--color-accent)',
+                                background: 'rgba(212, 175, 55, 0.05)',
+                                color: '#fff'
+                            }}>
+                                <h3 style={{ color: 'var(--color-accent)', marginBottom: '1rem' }}>Message Sent</h3>
+                                <p>Thank you for reaching out. We'll get back to you shortly.</p>
+                                <button
+                                    onClick={() => setStatus('idle')}
                                     style={{
-                                        width: '100%',
-                                        padding: '0.75rem',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        border: '1px solid rgba(212, 175, 55, 0.3)',
-                                        color: 'var(--color-text)',
-                                        fontSize: '1rem',
-                                        fontFamily: 'inherit'
+                                        marginTop: '1.5rem',
+                                        background: 'transparent',
+                                        border: '1px solid #fff',
+                                        color: '#fff',
+                                        padding: '0.5rem 1.5rem',
+                                        cursor: 'pointer'
                                     }}
-                                />
+                                >
+                                    Send Another
+                                </button>
                             </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                                <div>
+                                    <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-accent)', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
+                                        NAME *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        style={{
+                                            width: '100%',
+                                            padding: '0.75rem',
+                                            background: 'rgba(255,255,255,0.05)',
+                                            border: '1px solid rgba(212, 175, 55, 0.3)',
+                                            color: 'var(--color-text)',
+                                            fontSize: '1rem',
+                                            fontFamily: 'inherit'
+                                        }}
+                                    />
+                                </div>
 
-                            <div>
-                                <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-accent)', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
-                                    EMAIL *
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    style={{
-                                        width: '100%',
-                                        padding: '0.75rem',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        border: '1px solid rgba(212, 175, 55, 0.3)',
-                                        color: 'var(--color-text)',
-                                        fontSize: '1rem',
-                                        fontFamily: 'inherit'
-                                    }}
-                                />
-                            </div>
+                                <div>
+                                    <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-accent)', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
+                                        EMAIL *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        style={{
+                                            width: '100%',
+                                            padding: '0.75rem',
+                                            background: 'rgba(255,255,255,0.05)',
+                                            border: '1px solid rgba(212, 175, 55, 0.3)',
+                                            color: 'var(--color-text)',
+                                            fontSize: '1rem',
+                                            fontFamily: 'inherit'
+                                        }}
+                                    />
+                                </div>
 
-                            <div>
-                                <label htmlFor="phone" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-accent)', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
-                                    PHONE
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    style={{
-                                        width: '100%',
-                                        padding: '0.75rem',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        border: '1px solid rgba(212, 175, 55, 0.3)',
-                                        color: 'var(--color-text)',
-                                        fontSize: '1rem',
-                                        fontFamily: 'inherit'
-                                    }}
-                                />
-                            </div>
+                                <div>
+                                    <label htmlFor="phone" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-accent)', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
+                                        PHONE
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        style={{
+                                            width: '100%',
+                                            padding: '0.75rem',
+                                            background: 'rgba(255,255,255,0.05)',
+                                            border: '1px solid rgba(212, 175, 55, 0.3)',
+                                            color: 'var(--color-text)',
+                                            fontSize: '1rem',
+                                            fontFamily: 'inherit'
+                                        }}
+                                    />
+                                </div>
 
-                            <div>
-                                <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-accent)', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
-                                    MESSAGE *
-                                </label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    required
-                                    rows={6}
-                                    value={formData.message}
-                                    onChange={handleChange}
+                                <div>
+                                    <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-accent)', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
+                                        MESSAGE *
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        required
+                                        rows={6}
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        style={{
+                                            width: '100%',
+                                            padding: '0.75rem',
+                                            background: 'rgba(255,255,255,0.05)',
+                                            border: '1px solid rgba(212, 175, 55, 0.3)',
+                                            color: 'var(--color-text)',
+                                            fontSize: '1rem',
+                                            fontFamily: 'inherit',
+                                            resize: 'vertical'
+                                        }}
+                                    />
+                                </div>
+
+                                {status === 'error' && (
+                                    <p style={{ color: '#ff6b6b', fontSize: '0.9rem' }}>Something went wrong. Please try again or email us directly.</p>
+                                )}
+
+                                <button
+                                    type="submit"
+                                    disabled={status === 'sending'}
+                                    className="btn"
                                     style={{
-                                        width: '100%',
-                                        padding: '0.75rem',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        border: '1px solid rgba(212, 175, 55, 0.3)',
-                                        color: 'var(--color-text)',
-                                        fontSize: '1rem',
+                                        padding: '1rem 2rem',
+                                        background: 'transparent',
+                                        border: '2px solid var(--color-accent)',
+                                        color: 'var(--color-accent)',
+                                        fontSize: '0.9rem',
+                                        letterSpacing: '0.1em',
+                                        textTransform: 'uppercase',
+                                        cursor: status === 'sending' ? 'not-allowed' : 'pointer',
+                                        transition: 'all 0.3s ease',
                                         fontFamily: 'inherit',
-                                        resize: 'vertical'
+                                        opacity: status === 'sending' ? 0.5 : 1
                                     }}
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="btn"
-                                style={{
-                                    padding: '1rem 2rem',
-                                    background: 'transparent',
-                                    border: '2px solid var(--color-accent)',
-                                    color: 'var(--color-accent)',
-                                    fontSize: '0.9rem',
-                                    letterSpacing: '0.1em',
-                                    textTransform: 'uppercase',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.3s ease',
-                                    fontFamily: 'inherit'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = 'var(--color-accent)';
-                                    e.currentTarget.style.color = 'var(--color-bg)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.background = 'transparent';
-                                    e.currentTarget.style.color = 'var(--color-accent)';
-                                }}
-                            >
-                                Send Message
-                            </button>
-                        </form>
+                                    onMouseEnter={(e) => {
+                                        if (status !== 'sending') {
+                                            e.currentTarget.style.background = 'var(--color-accent)';
+                                            e.currentTarget.style.color = 'var(--color-bg)';
+                                        }
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        if (status !== 'sending') {
+                                            e.currentTarget.style.background = 'transparent';
+                                            e.currentTarget.style.color = 'var(--color-accent)';
+                                        }
+                                    }}
+                                >
+                                    {status === 'sending' ? 'Sending...' : 'Send Message'}
+                                </button>
+                            </form>
+                        )}
                     </div>
 
                     {/* Visit Us Section */}
