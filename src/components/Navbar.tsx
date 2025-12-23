@@ -18,7 +18,7 @@ const Navbar = () => {
         <nav className="navbar-strict">
             <div className="container nav-container-strict">
                 <Link to="/" className="nav-logo-strict" onClick={closeMenu}>
-                    The "O" Bar
+                    <span style={{ color: 'var(--color-accent)' }}>The "O" Bar</span>
                 </Link>
 
                 {/* Mobile hamburger button */}

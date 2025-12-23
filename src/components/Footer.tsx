@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer section">
             <div className="container footer-content">
                 <div className="footer-col">
-                    <h3>The "O" Bar</h3>
+                    <h3><span style={{ color: 'var(--color-accent)' }}>The "O" Bar</span></h3>
                     <p className="address">
                         141 N Carrollton Ave<br />
                         New Orleans, LA 70119
@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
 
             <div className="container footer-bottom">
-                <p>&copy; {year} The "O" Bar. All rights reserved.</p>
+                <p>&copy; {year} <span style={{ color: 'var(--color-accent)' }}>The "O" Bar</span>. All rights reserved.</p>
             </div>
         </footer>
     );

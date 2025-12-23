@@ -18,7 +18,7 @@
 .nav-logo-strict {
     font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
-    color: #fff;
+    color: var(--color-accent);
     text-decoration: none;
     letter-spacing: 0.1em;
     font-weight: 400;

@@ -46,7 +46,7 @@ const Home = () => {
             <section className="hero-strict">
                 <div className="hero-overlay-strict"></div>
                 <div className="hero-content-strict">
-                    <h1>The "O" Bar</h1>
+                    <h1><span style={{ color: 'var(--color-accent)' }}>The "O" Bar</span></h1>
                     <p className="hero-subtitle-strict">A cocktail bar on North Carrollton. Open 5 PM nightly.</p>
 
                     <div className="hero-buttons-strict">

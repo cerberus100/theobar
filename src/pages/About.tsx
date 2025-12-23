@@ -25,7 +25,7 @@ const About = () => {
 
                             <div style={{ lineHeight: '1.8', fontSize: '1.1rem' }}>
                                 <p className="mb-medium">
-                                    The "O" Bar is a cocktail lounge on North Carrollton Avenue in New Orleans. It’s a place to sit down, order a drink, and stay a while. The room stays calm, the lighting stays low, and the bar is meant to feel familiar even on a first visit.
+                                    <span style={{ color: 'var(--color-accent)' }}>The "O" Bar</span> is a cocktail lounge on North Carrollton Avenue in New Orleans. It’s a place to sit down, order a drink, and stay a while. The room stays calm, the lighting stays low, and the bar is meant to feel familiar even on a first visit.
                                 </p>
 
                                 <p>
