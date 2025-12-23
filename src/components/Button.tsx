@@ -12,6 +12,16 @@ const Button = ({ children, to, onClick, className = '', type = 'button' }: Butt
     const baseClass = `btn-primary ${className}`;
 
     if (to) {
+        const isExternal = to.startsWith('http');
+
+        if (isExternal) {
+            return (
+                <a href={to} className={baseClass} target="_blank" rel="noopener noreferrer">
+                    {children}
+                </a>
+            );
+        }
+
         return (
             <Link to={to} className={baseClass}>
                 {children}
